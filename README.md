@@ -1133,6 +1133,435 @@ input('Enter Something into this box: ')
 ```
 
 
+## Functions
+Functions are the building blocks to construct larger and larger amounts of code to solve problems.
+
+A Function is apiece of code that groups together a set of statements so they can be run more than once.
+
+They can also let us specify parameters that can serve as inputs to the functions.
+
+
+```
+def name_of_function(arg1,arg2):
+    '''
+    This is where the function's Document String (docstring) goes
+    '''
+    # Do stuff here
+    # Return desired result
+```
+
+
+*A simple print 'hello' function*
+
+```
+def say_hello():
+    print('hello')
+
+say_hello()
+
+
+> hello
+```
+
+*A function to add numbers*
+
+```
+def add_num(num1,num2):
+    return num1+num2
+
+
+add_num(2, 5)
+
+> 7
+```
+
+*A function to check if number is Prime or not*
+
+```
+import math
+
+def is_prime2(num):
+    '''
+    Method to check if number is prime
+    '''
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+
+is_prime2(18)
+>
+False
+
+
+is_prime2(17)
+>
+True
+
+```
+
+## Args and Kwargs
+
+***Args**
+
+When a function parameter starts with an asterisk, it allows for an arbitrary number of arguments, and the function takes them in as a tuple of values. 
+
+```
+def myfunc(*args):
+    return sum(args)*.05
+
+myfunc(40,60,20)
+
+>
+6.0
+```
+
+****Kwargs**
+
+Similarly, Python offers a way to handle arbitrary numbers of keyworded arguments. Instead of creating a tuple of values, **kwargs builds a dictionary of key/value pairs.
+
+
+```
+def myfunc(**kwargs):
+    if 'fruit' in kwargs:
+        print(f"My favorite fruit is {kwargs['fruit']}")  # review String Formatting and f-strings if this syntax is unfamiliar
+    else:
+        print("I don't like fruit")
+        
+    
+myfunc(fruit='pineapple')
+> My favorite fruit is pineapple
+
+
+myfunc()
+> I don't like fruit
+```
+
+
+## Lambda Expressions, Map, and Filter
+
+### Map Function
+
+The map function allows you to "map" a function to an iterable object. That is to say you can quickly call the same function to every item in an iterable, such as a list.
+
+
+```
+def square(num):
+    return num**2
+
+my_nums = [1,2,3,4,5]
+
+
+# To get the results, either iterate through map() 
+# or just cast to a list
+
+list(map(square,my_nums))
+
+> [1, 4, 9, 16, 25]
+```
+
+
+### Filter Function
+
+The filter function returns an iterator yielding those items of iterable for which function(item) is true.
+
+Meaning you need to filter by a function that returns either True or False.
+
+
+```
+def check_even(num):
+    return num % 2 == 0
+
+nums = [0,1,2,3,4,5,6,7,8,9,10]
+
+list(filter(check_even,nums))
+
+> [0, 2, 4, 6, 8, 10]
+```
+
+
+### Lambda expression
+
+Lambda expressions allow us to create "anonymous" functions. 
+
+This basically means we can quickly make ad-hoc functions without needing to properly define a function using def.
+
+Function objects returned by running lambda expressions work exactly the same as those created and assigned by defs.
+
+**lambda's body is a single expression, not a block of statements.**
+
+
+*Lets slowly break down a lambda expression by deconstructing a function:*
+```
+def square(num):
+    result = num**2
+    return result
+
+square(2)
+
+> 4
+```
+
+We could simplify it:
+```
+def square(num):
+    return num**2
+```
+
+
+We could actually even write this all on one line.
+```
+def square(num): return num**2
+```
+
+This is the form a function that a lambda expression intends to replicate. A lambda expression can then be written as:
+
+```
+lambda num: num ** 2
+```
+
+
+```
+my_nums = [1,2,3,4,5]
+
+list(map(lambda num: num ** 2, my_nums))
+
+>[1, 4, 9, 16, 25]
+```
+
+
+```
+my_nums = [1,2,3,4,5]
+
+list(filter(lambda n: n % 2 == 0,nums))
+
+>[0, 2, 4, 6, 8, 10]
+```
+
+## Object Oriented Programming
+
+### Objects
+
+In Python, everything is an object.
+
+```
+print(type([]))
+print(type(()))
+
+>
+<class 'list'>
+<class 'tuple'>
+```
+
+
+### Class
+User defined objects are created using the class keyword. 
+
+```
+# Create a new object type called Sample
+class Sample:
+    pass
+
+# Instance of Sample
+x = Sample()
+
+print(type(x))
+
+>
+<class '__main__.Sample'>
+```
+
+By convention we give classes a name that starts with a capital letter. Note how x is now the reference to our new instance of a Sample class. In other words, we instantiate the Sample class.
+
+
+An **attribute** is a characteristic of an object. 
+
+A **method** is an operation we can perform with the object.
+
+
+The syntax for creating an attribute is:
+
+```
+self.attribute = something
+```
+
+There is a special method called:
+
+```
+__init__()
+```
+
+
+
+This method is used to initialize the attributes of an object.
+
+```
+class Dog:
+    def __init__(self,breed):
+        self.breed = breed
+        
+sam = Dog(breed='Lab')
+frank = Dog(breed='Huskie')
+
+
+
+sam.breed
+> 'Lab'
+
+
+frank.breed
+> 'Huskie'
+
+```
+
+
+### Methods
+
+Methods are functions defined inside the body of a class. They are used to perform operations with the attributes of our objects.
+
+
+```
+class Circle:
+    pi = 3.14
+
+    # Circle gets instantiated with a radius (default is 1)
+    def __init__(self, radius=1):
+        self.radius = radius 
+        self.area = radius * radius * Circle.pi
+
+    # Method for resetting Radius
+    def setRadius(self, new_radius):
+        self.radius = new_radius
+        self.area = new_radius * new_radius * self.pi
+
+    # Method for getting Circumference
+    def getCircumference(self):
+        return self.radius * self.pi * 2
+
+
+c = Circle()
+
+print('Radius is: ',c.radius)
+print('Area is: ',c.area)
+print('Circumference is: ',c.getCircumference())
+
+
+>
+Radius is:  1
+Area is:  3.14
+Circumference is:  6.28
+```
+
+
+## Inheritance
+
+Inheritance is the ability of class to inherit the properties of an existing class. 
+
+The class which derives the property if called Derived Class.
+
+The class from which it derives its property is called Base class.
+
+It is used to represent *is a kind of relationship*.
+
+
+```
+class Animal:
+    def __init__(self):
+        print("Animal created")
+
+    def whoAmI(self):
+        print("Animal")
+
+    def eat(self):
+        print("Eating")
+
+
+class Dog(Animal):
+    def __init__(self):
+        Animal.__init__(self)
+        print("Dog created")
+
+    def whoAmI(self):
+        print("Dog")
+
+    def bark(self):
+        print("Woof!")
+```
+
+
+```
+d = Dog()
+
+>
+Animal created
+Dog created
+
+
+d.whoAmI()
+> Dog
+
+
+d.eat()
+> Eating
+
+
+d.bark()
+> Woof!
+
+```
+
+
+## Polymorphism
+
+
+Polymorphism is the ability to be represented in more than one form.
+
+Polymorphism refers to the way in which different object classes can share the same method name, and those methods can be called from the same place even though a variety of different objects might be passed in.
+
+
+```
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return self.name+' says Woof!'
+    
+class Cat:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return self.name+' says Meow!' 
+    
+
+niko = Dog('Niko')
+felix = Cat('Felix')
+
+
+print(niko.speak())
+print(felix.speak())
+```
+
+
+Here we have a Dog class and a Cat class, and each has a .speak() method. When called, each object's .speak() method returns a result unique to the object.
+
+
+```
+def pet_speak(pet):
+    print(pet.speak())
+
+pet_speak(niko)
+pet_speak(felix)
+
+> 
+Niko says Woof!
+Felix says Meow!
+
+
+```
+
 
 
 
