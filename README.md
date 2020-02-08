@@ -1,8 +1,69 @@
-# Python Workshop
+# Python3 Workshop
 
-## Why Python? What's the hype?
+Topics we will be covering in this worlshop:
+- [Python3 Workshop](#python3-workshop)
+  - [What is Python?](#what-is-python)
+  - [Comments in Python](#comments-in-python)
+  - [Basic Data Structures](#basic-data-structures)
+    - [Numbers](#numbers)
+      - [Types of numbers](#types-of-numbers)
+      - [Basic Arithmetic](#basic-arithmetic)
+      - [Variable Assignment](#variable-assignment)
+      - [Rules for naming variables](#rules-for-naming-variables)
+      - [Dynamic Typing](#dynamic-typing)
+      - [Determining type of variable](#determining-type-of-variable)
+  - [Strings](#strings)
+    - [Indexing and Slicing in Strings](#indexing-and-slicing-in-strings)
+    - [String Properties](#string-properties)
+    - [String Methods](#string-methods)
+    - [String Formatting](#string-formatting)
+  - [List](#list)
+    - [Indexing and Slicing in List](#indexing-and-slicing-in-list)
+    - [List Methods](#list-methods)
+    - [Nested List](#nested-list)
+    - [List Comprehension](#list-comprehension)
+  - [Dictonary](#dictonary)
+    - [Dictonary Methods](#dictonary-methods)
+    - [Tuples](#tuples)
+    - [Tuple Methods](#tuple-methods)
+    - [Tuples are Immutable!](#tuples-are-immutable)
+    - [Use of Tuple](#use-of-tuple)
+  - [Sets](#sets)
+  - [Booleans](#booleans)
+  - [File Handling](#file-handling)
+    - [Writing to a File](#writing-to-a-file)
+- [Python Statements](#python-statements)
+  - [if, elif, else Statements](#if-elif-else-statements)
+- [Loops](#loops)
+  - [For Loop](#for-loop)
+  - [While Loop](#while-loop)
+    - [Range](#range)
+    - [Enumerate](#enumerate)
+    - [Zip](#zip)
+    - [In](#in)
+    - [Random](#random)
+  - [Functions](#functions)
+  - [Args and Kwargs](#args-and-kwargs)
+  - [Lambda Expressions, Map, and Filter](#lambda-expressions-map-and-filter)
+    - [Map Function](#map-function)
+    - [Filter Function](#filter-function)
+    - [Lambda expression](#lambda-expression)
+  - [Object Oriented Programming](#object-oriented-programming)
+    - [Objects](#objects)
+    - [Class](#class)
+    - [Methods](#methods)
+  - [Inheritance](#inheritance)
+  - [Polymorphism](#polymorphism)
+  - [Time to Practice](#time-to-practice)
+  - [Some Resources to start your Python Journey](#some-resources-to-start-your-python-journey)
+  - [References](#references)
 
-## Some History of Python
+## What is Python?
+
+[![alt text](https://github.com/ishpreet-singh/python3-workshop/blob/master/assets/why-python.png)
+](https://www.youtube.com/watch?v=Y8Tko2YC5hA)
+
+![alt text](https://github.com/ishpreet-singh/python3-workshop/blob/master/assets/lets-begin.png)
 
 ## Comments in Python
 
@@ -173,7 +234,7 @@ len('Python3 Workshop')
 > 16
 ```
 
-### Indexing and Slicing
+### Indexing and Slicing in Strings
 
 ```
 # Assign s as a string
@@ -404,7 +465,7 @@ len(my_list)
 > 5
 ```
 
-### Indexing and Slicing
+### Indexing and Slicing in List
 
 Indexing and slicing work just like in strings.
 
@@ -1559,26 +1620,31 @@ pet_speak(felix)
 Niko says Woof!
 Felix says Meow!
 
-
 ```
 
+## Time to Practice
 
-
+* [Practice](https://github.com/ishpreet-singh/python3-workshop/tree/master/practice)
 
 
 ----
 
-# Some Resources to start your Python Journey
+## Some Resources to start your Python Journey
 
 * https://docs.python.org/3/ 
+* https://github.com/promehul/python_assignment-1/blob/master/Learn%20Python%203%20the%20Hard%20Way.pdf
 * https://developers.google.com/edu/python 
 * https://learnxinyminutes.com/docs/python3/
 * https://www.udemy.com/course/learn-python-3-from-beginner-to-advanced/ 
+* https://www.youtube.com/watch?v=yE9v9rt6ziw 
+* https://www.kaggle.com/learn/python
 
 
-# References
+
+## References
 
 * https://docs.python.org/3/ 
 * https://github.com/Pierian-Data/Complete-Python-3-Bootcamp
 * https://learnxinyminutes.com/docs/python3/
 * https://developers.google.com/edu/python 
+* https://www.youtube.com/channel/UCWv7vMbMWH4-V0ZXdmDpPBA
